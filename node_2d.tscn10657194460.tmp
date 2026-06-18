@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://xlvcyh2ng2jw"]
+
+[ext_resource type="Script" uid="uid://c6xdgmwcopp3u" path="res://character_body_2d.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://doq58grdcbsq0" path="res://migFrames/mig17_1.png" id="1_wtcfe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_epypp"]
+radius = 440.4543
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e48y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wtcfe")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1197747272]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1281250350]
+position = Vector2(492, 283)
+rotation = 6.2831855
+scale = Vector2(0.05, 0.05)
+script = ExtResource("1_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1832688944]
+shape = SubResource("CircleShape2D_epypp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D/CollisionShape2D" unique_id=1698359883]
+sprite_frames = SubResource("SpriteFrames_0e48y")
+animation = &"idle"
+
+[node name="leftGun" type="Marker2D" parent="CharacterBody2D/CollisionShape2D" unique_id=835562252]
+position = Vector2(-35.55, -613.155)
+
+[node name="rightGun" type="Marker2D" parent="CharacterBody2D/CollisionShape2D" unique_id=1918394154]
+position = Vector2(35.55, -613.155)
