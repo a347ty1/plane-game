@@ -45,7 +45,8 @@ func _draw():
 func placeTarget():
 	if target_count >= 10:
 		return
-	var rect : Rect2 = get_viewport_rect()
+	#var mapZoneBox = get_node("mapZone/mapZoneBox")
+	var rect : Rect2 = get_viewport_rect() #mapZoneBox.shape.get_rect()
 	var x = randi_range(rect.size.x * 0.1, rect.size.x*0.9)
 	var y = randi_range(rect.size.y * 0.1 , rect.size.y * 0.9)
 	
